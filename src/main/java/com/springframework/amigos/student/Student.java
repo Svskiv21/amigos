@@ -24,7 +24,7 @@ public class Student {
     private String name;
     private String email;
     private LocalDate dob;
-    @Transient
+    @Transient // we use this ann when we don't want to save a property to db/file
     private Integer age;
 
     public Student(String name, String email, LocalDate dob) {

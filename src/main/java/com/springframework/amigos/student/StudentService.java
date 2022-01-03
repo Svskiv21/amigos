@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service // this annotation makes this class a bean, class may be instantiated from now
+@Service                      // this annotation makes this class a bean, class may be instantiated from now
 public class StudentService { // Business Layer
 
     private final StudentRepository studentRepository;
@@ -17,5 +17,10 @@ public class StudentService { // Business Layer
 
     public List<Student> getStudents(){ // jak damy liste jak tutaj to zwróci nam jsona
         return studentRepository.findAll();
+    }
+
+    public void addNewStudent(Student student) {
+        System.out.println(student);
+        //studentRepository.save(student);
     }
 }

@@ -2,9 +2,7 @@ package com.springframework.amigos.student;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,11 @@ public class StudentController { // class will have all resources for our API
     @GetMapping
     public List<Student> getStudents(){ // jak damy liste jak tutaj to zwróci nam jsona
         return studentService.getStudents();
+    }
+
+    @PostMapping
+    public void registerNewStudent(@RequestBody Student student){
+        // @RequestBody means we want to take obj received from client to database
+        studentService.addNewStudent(student);
     }
 }
